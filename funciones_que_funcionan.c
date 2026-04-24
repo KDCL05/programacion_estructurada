@@ -31,7 +31,7 @@ int Diagonal(int v[3][3],int c){
 }
 int Guardar(int v[][3],int c){
   FILE *f;
-  f= fopen("tablero.txt","w");
+  f= fopen("tablero.txt","a");
   for(int i=0;i<3;i++){
     for(int j=0;j<3;j++){
         fprintf(f,"%d ",v[i][j]);
@@ -39,7 +39,9 @@ int Guardar(int v[][3],int c){
     fprintf(f,"\n");
  }
  fprintf(f,"la suma de la diagonal es : %d",c);
+ fprintf(f,"\n");
  fclose(f);
+
  return 1;
 
 }
@@ -50,7 +52,7 @@ int main()
 
     Rellenar(v);
 
-    Diagonal(v,c);
+    Diagonal(v,&c);
     printf("%d",Guardar(v,c));
 
     return 0;
