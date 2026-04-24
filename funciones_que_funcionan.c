@@ -52,7 +52,7 @@ int main()
 
     Rellenar(v);
 
-    Diagonal(v,&c);
+    c=Diagonal(v,&c);
     printf("%d",Guardar(v,c));
 
     return 0;
